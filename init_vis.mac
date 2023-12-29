@@ -1,0 +1,15 @@
+/vis/open RayTracer
+/vis/viewer/set/viewpointThetaPhi 70 20
+/vis/drawVolume
+/vis/viewer/set/style wireframe
+/vis/scene/add/trajectories smooth
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate
+/vis/scene/add/axes 0 0 0 1 m
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/set gamma blue
+/vis/scene/endOfEventAction accumulate
+/vis/scene/endOfRunAction refresh
+
+/tracking/storeTrajectory 1
+/run/beamOn 1
