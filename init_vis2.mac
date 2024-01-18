@@ -22,5 +22,5 @@
 /vis/viewer/flush
 
 # Specify the number of events to simulate
-/run/beamOn 1
+/run/beamOn 100
 

@@ -18,8 +18,11 @@ int main(int argc, char** argv) {
     G4PhysListFactory physListFactory;
 
     // TODO: change to Shielding list or w/e
+    // G4VModularPhysicsList* physicsList =
+    // physListFactory.GetReferencePhysList(
+    //     "FTFP_BERT");  // or "G4EmStandardPhysics"
     G4VModularPhysicsList* physicsList = physListFactory.GetReferencePhysList(
-        "FTFP_BERT");  // or "G4EmStandardPhysics"
+        "Shielding");  // or "G4EmStandardPhysics"
     physicsList->SetVerboseLevel(1);
     runManager->SetUserInitialization(physicsList);
 

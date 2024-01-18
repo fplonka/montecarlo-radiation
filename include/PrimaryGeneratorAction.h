@@ -1,18 +1,23 @@
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h
+#ifndef PRIMARYGENERATORACTION_H
+#define PRIMARYGENERATORACTION_H
 
-#include "G4ParticleGun.hh"
+#include "G4GeneralParticleSource.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction {
    public:
+    // Constructor
     PrimaryGeneratorAction();
+
+    // Destructor
     virtual ~PrimaryGeneratorAction();
 
+    // Method to generate primary particles
     virtual void GeneratePrimaries(G4Event* anEvent) override;
 
    private:
-    G4ParticleGun* particleGun;
+    // Particle source
+    G4GeneralParticleSource* fParticleSource;
 };
 
-#endif  // PrimaryGeneratorAction_h
+#endif  // PRIMARYGENERATORACTION_H
