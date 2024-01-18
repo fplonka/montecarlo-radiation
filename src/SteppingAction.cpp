@@ -13,12 +13,13 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     auto momentumDirection = track->GetMomentumDirection();
     auto stepLength = step->GetStepLength();
 
-    if (track->GetDefinition() == G4Gamma::Definition()) {
-        // G4cout << "Step number: " << stepNumber << G4endl;
-        // G4cout << "Photon position: " << position << G4endl;
-        // G4cout << "Photon momentum direction: " << momentumDirection <<
-        // G4endl; G4cout << "Photon kinetic energy: " << kineticEnergy <<
-        // G4endl; G4cout << "Step in volume: " << volume << G4endl; G4cout <<
-        // "Step length: " << stepLength << G4endl;
-    }
+    // G4cout << "IN: " << track->GetDefinition() << "\n";
+    // if (track->GetDefinition() == G4Gamma::Definition()) {
+    //     G4cout << "Step number: " << stepNumber << G4endl;
+    //     G4cout << "Photon position: " << position << G4endl;
+    //     G4cout << "Photon momentum direction: " << momentumDirection <<
+    //     G4endl; G4cout << "Photon kinetic energy: " << kineticEnergy <<
+    //     G4endl; G4cout << "Step in volume: " << volume << G4endl; G4cout <<
+    //     "Step length: " << stepLength << G4endl; G4cout << G4endl;
+    // }
 }

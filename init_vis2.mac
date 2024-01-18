@@ -1,26 +1,25 @@
 # Set up VRML2 file for visualization output
-/vis/open VRML2FILE
+# /vis/open VRML2FILE
 
 # Draw the detector's volume
-/vis/drawVolume
+# /vis/drawVolume
 
 # Create a model for drawing trajectories by particle ID
-/vis/modeling/trajectories/create/drawByParticleID
-/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
-/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 10
-/vis/modeling/trajectories/drawByParticleID-0/default/setDrawAuxPts false
+# /vis/modeling/trajectories/create/drawByParticleID
+# /vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+# /vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 10
+# /vis/modeling/trajectories/drawByParticleID-0/default/setDrawAuxPts false
 # /vis/modeling/trajectories/drawByParticleID-0/default/setAuxPtsSize 10
-/vis/modeling/trajectories/drawByParticleID-0/default/setLineColour blue
+# /vis/modeling/trajectories/drawByParticleID-0/default/setLineColour blue
 
 # Add the trajectories to the scene
-/vis/scene/add/trajectories
+# /vis/scene/add/trajectories
 
 # Accumulate the events for visualization
-/vis/scene/endOfEventAction accumulate
+# /vis/scene/endOfEventAction accumulate
 
 # Refresh the viewer to visualize the changes
-/vis/viewer/flush
+# /vis/viewer/flush
 
 # Specify the number of events to simulate
-/run/beamOn 100
-
+/run/beamOn 1000

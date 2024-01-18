@@ -2,6 +2,7 @@
 #define PRIMARYGENERATORACTION_H
 
 #include "G4GeneralParticleSource.hh"
+#include "G4ParticleGun.hh"
 #include "G4VUserPrimaryGeneratorAction.hh"
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction {
@@ -18,6 +19,7 @@ class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction {
    private:
     // Particle source
     G4GeneralParticleSource* fParticleSource;
+    G4ParticleGun* fParticleGun;
 };
 
 #endif  // PRIMARYGENERATORACTION_H
