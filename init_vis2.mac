@@ -1,8 +1,8 @@
 # Set up VRML2 file for visualization output
-# /vis/open VRML2FILE
+/vis/open VRML2FILE
 
 # Draw the detector's volume
-# /vis/drawVolume
+/vis/drawVolume
 
 # Create a model for drawing trajectories by particle ID
 # /vis/modeling/trajectories/create/drawByParticleID
@@ -22,4 +22,5 @@
 # /vis/viewer/flush
 
 # Specify the number of events to simulate
-/run/beamOn 1000
+# /run/beamOn 100000
+# /run/beamOn 1

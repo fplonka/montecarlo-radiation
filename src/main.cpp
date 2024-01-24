@@ -7,10 +7,14 @@
 #include "G4VModularPhysicsList.hh"
 #include "G4VisExecutive.hh"
 #include "PhysicsList.h"
+#include "SimulationConstants.h"
 
 int main(int argc, char** argv) {
     // Construct the default run manager
     auto runManager = new G4RunManager;
+
+    std::cout << "ACTIVITY: " << SOURCE_ACTIVITY << "\n";
+    std::cout << "SIM TIME: " << SIM_TIME << "\n";
 
     // Set mandatory initialization classes
     runManager->SetUserInitialization(new DetectorConstruction());
@@ -23,7 +27,7 @@ int main(int argc, char** argv) {
     //     "FTFP_BERT");  // or "G4EmStandardPhysics"
     G4VModularPhysicsList* physicsList = physListFactory.GetReferencePhysList(
         "Shielding");  // or "G4EmStandardPhysics"
-    physicsList->SetVerboseLevel(1);
+    // physicsList->SetVerboseLevel(1);
     runManager->SetUserInitialization(physicsList);
 
     // Set user action initialization
@@ -55,10 +59,12 @@ int main(int argc, char** argv) {
         ui->SessionStart();
         delete ui;
     } else {
-        // Batch mode
-        G4String command = "/control/execute ";
         G4String fileName = argv[1];
-        UImanager->ApplyCommand(command + fileName);
+        if (!fileName.empty()) {
+            // Execute macro file
+            UImanager->ApplyCommand("/control/execute " + fileName);
+        }
+        runManager->BeamOn(NUM_EVENTS);
     }
 
     // Job termination

@@ -2,11 +2,11 @@
 CXX = g++
 
 # Define any compile-time flags
-CXXFLAGS = $(shell geant4-config --cflags) -Iinclude -fsanitize=address
+CXXFLAGS = $(shell geant4-config --cflags) -fsanitize=address
 
 # Define any directories containing header files other than /usr/include
 #
-INCLUDES =
+INCLUDES = -Iinclude
 
 # Define library paths in addition to /usr/lib
 LFLAGS = $(shell geant4-config --libs) -Wl,-rpath,/Users/filip/Code/cpp/physproject/install/lib

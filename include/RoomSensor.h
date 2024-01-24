@@ -7,6 +7,7 @@
 
 struct SensorInfo {
     G4int hits;
+    G4double dose;
     G4ThreeVector position;
 };
 
